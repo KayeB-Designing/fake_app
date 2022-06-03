@@ -15,6 +15,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
+
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 POST_GRES = str(os.getenv('POST_GRES'))
 PG_KEY = str(os.getenv('PG_KEY'))
@@ -85,8 +86,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'fakeapp',
-        'USER': 'POST_GRES',
-        'PASSWORD': 'PG_KEY',
+        'USER': POST_GRES,
+        'PASSWORD': PG_KEY,
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
